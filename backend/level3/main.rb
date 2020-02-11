@@ -82,7 +82,7 @@ end
 
 def calculate_commission price, use_day
   insurance_fee = price * 0.3 * 0.5
-  assistance_fee = (use_day * 100 + insurance_fee) > price ? (price - insurance_fee) : use_day * 100
+  assistance_fee = (use_day * 100 + insurance_fee) > price * 0.3 ? (price - insurance_fee) : use_day * 100
   drivy_fee =  price * 0.3 - insurance_fee - assistance_fee
   {
     insurance_fee: insurance_fee.to_i,
